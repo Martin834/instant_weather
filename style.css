@@ -1,3 +1,15 @@
+body{
+    font-family: cursive;
+}
+
 h1 {
-    color: red;
+    color: rgb(207, 194, 194);
+    background-color: rgb(24, 98, 209);
+    height: 6vw;
+    width: 55%;
+    padding-top: 1vw;
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 5vw;
+    
 }
