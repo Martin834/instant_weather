@@ -15,16 +15,14 @@
     <div class="corps">
         <label>Merci de saisir le code postal ci-dessous</label>
         <br><br>
-        <form>
-            <input type="text" id="codePostal" placeholder=" EX : 61200">
-            <select id="listeVille"></select>
+        <input type="text" id="codePostal" placeholder="  EX : 61200">
+        <form method="get" action="bilan_meteo.html">
+            <select id="listeVille" name="codeInsee" required></select>
+            <input type="submit" class="valider" value="Valider"/>
         </form>
-        
         <br><br>
         <image id="img_index" src="./images/navigateur_cadre.png"></image>
-        <a href="bilan_meteo.html"><button class="valider" onclick="">Valider</button></a>
     </div>
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
