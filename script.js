@@ -28,9 +28,9 @@ codePostal.addEventListener("input", function() {
 });
 
  async function afficherCommunes(codePostal) {
-  const r =  fetch("https://geo.api.gouv.fr/communes?codePostal="+codePostal);
+  const r = fetch("https://geo.api.gouv.fr/communes?codePostal="+codePostal);
   r.then(response => {
-    return response.json()
+     return response.json()
   }).then(villes => {
     
     if(villes.length == 0){
