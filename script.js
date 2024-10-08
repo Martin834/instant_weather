@@ -1,7 +1,8 @@
 
 let listeVille = document.getElementById("listeVille");
-
+listeVille.style.display = "none";
 let codePostal = document.getElementById("codePostal");
+console.log(listeVille.style.appearance)
 
 codePostal.addEventListener("input", function() {
   
@@ -17,8 +18,11 @@ codePostal.addEventListener("input", function() {
 
   if(codePostal.value.length == 5){
     afficherCommunes(codePostal.value);
+    listeVille.style.display = "block";
+    listeVille.style.appearance = "";
   } else {
     listeVille.innerHTML = ""
+    listeVille.style.display = "none";
   }
   
 });
@@ -31,6 +35,7 @@ codePostal.addEventListener("input", function() {
     
     if(villes.length == 0){
       listeVille.innerHTML += "<option value = \"\" >-- Aucune commune trouvée --</option>"
+      listeVille.style.appearance = "none";
     } else {
       listeVille.innerHTML += "<option value = \"\" >-- Choisissez une commune --</option>"
       for(i = 0; i < villes.length; i++){
