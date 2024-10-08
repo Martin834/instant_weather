@@ -1,7 +1,8 @@
 let Tmin = document.getElementById("Tmin");
 let Tmax = document.getElementById("Tmax");
-let probaPluie = document.getElementById("probaPluie");
-let nbHSoleil = document.getElementById("nbHSoleil");
+let probaPluie = document.getElementById("ProbaPluie");
+let nbHSoleil = document.getElementById("NbHSoleil");
+var imgBilanMeteo = document.getElementById("imgBilanMeteo");
 
 async function fecthMeteo(codeInsee){
     try {
@@ -12,3 +13,15 @@ async function fecthMeteo(codeInsee){
         console.error("Erreur lors des requêtes : ", error)
     }
 }
+
+function afficherimage(){
+    if(nbHSoleil.textContent >= "6"){
+        imgBilanMeteo.src = "images/rabbide_meteo_bbq.png";
+    }
+    if(nbHSoleil.textContent < "6"){
+        imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
+    }
+   
+}
+
+afficherimage()
