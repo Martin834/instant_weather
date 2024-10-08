@@ -1,25 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sixtyfour+Convergence&display=swap');
+
+
 body{
-    font-family: cursive;
+    font-family: "Josefin Sans", sans-serif;
     background-image: url("./images/fond.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .titre {
-    background-color: rgb(24, 98, 209);
-    width: 60vw;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-top:  1vw;
+    width: 65vw;
     margin-top: 20px;
-    box-shadow: 1vw 1vw 1vw rgb(13, 53, 114);
+    box-shadow: 1vw 1vw 1vw #3c2b3f;
 }
 
 h1 {
     text-align: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: rgb(255,255,255);
+    margin-top: 1.2%;
+    margin-bottom: 0%;
     width: 100%;
     display: inline-block;
-    font-size: 3.2vw;
+    font-size: 3.8vw;
 }
 
 .corps {
@@ -28,8 +32,14 @@ h1 {
     width: 50%;
     margin: 3vw;
     box-shadow: 1vw 1vw 1.5vw rgba(0, 0, 0);
+    padding: 1vw;
 }
 
 #img_index {
     width: 50%;
+}
+
+label {
+    color:rgb(255,255,255);
+    font-size: 1.5vw;
 }
