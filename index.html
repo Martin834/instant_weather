@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet">
-   
-    <title>Rabbide Meteo</title>
-</head>
-<body>
-    <div class="titre">
-        <h1>RABBIDE INSTANT WEATHER</h1>
-    </div>
-
-    <div class="corps">
-        <label>Merci de saisir le code postal ci-dessous !! 🐇🤪</label>
-        <br><br>
-        
-        <div class="form_et_image">
-            <div>
-                <input type="text" id="codePostal" placeholder="EX : 61200">
-                <form method="get" action="bilan_meteo.html">
-                    <select id="listeVille" name="codeInsee" required></select>
-                    <input class="bouton" type="submit" class="valider" value="Valider"/>
-                </form>
-            </div>
-            <image id="img_index" src="./images/navigateur_cadre.png"></image>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./style.css" rel="stylesheet">
+    
+        <title>Rabbide Meteo</title>
+    </head>
+    <body>
+        <div class="titre">
+            <h1>RABBIDE INSTANT WEATHER</h1>
         </div>
-    </div>
-<script src="script.js"></script>
-</body>
+
+        <div class="corps">
+            <label>Merci de saisir le code postal ci-dessous !! 🐇🤪</label>
+            <br><br>
+            
+            <div class="form_et_image">
+                <div>
+                    <br><br><br>
+                    <input type="text" id="codePostal" placeholder=" Exemple : '61200'">
+                    <br><br>
+                    <form method="get" action="bilan_meteo.html">
+                        <select id="listeVille" name="codeInsee" required></select>
+                        <br><br><br><br>
+                        <input class="bouton" type="submit" class="valider" value="Valider"/>
+                    </form>
+                </div>
+                <image id="img_index" src="./images/navigateur_cadre.png"></image>
+            </div>
+        </div>
+    <script src="script.js"></script>
+    </body>
 </html>
