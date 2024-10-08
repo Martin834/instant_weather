@@ -8,20 +8,23 @@
     <title>Rabbide Meteo</title>
 </head>
 <body>
-    <div id="titre">
-        <h1>Meteo Instant Weather</h1>
+    <div class="titre">
+        <h1>MÉTÉO INSTANT WEATHER</h1>
     </div>
-    <label>Merci de saisir le code postal ci-dessous</label>
-    <br><br>
-    <form>
-        <input type="text" id="codePostal" placeholder="  EX : 61200">
-        <select id="listeVille"></select>
-    </form>
-    
-    <br><br>
-    <image src="./images/rabbide_meteo_navigateur.jpg"></image>
-    <a href="bilan_meteo.html"><button class="valider" onclick="">Valider</button></a>
-<script src="script.js"></script>
+
+    <div class="corps">
+        <label>Merci de saisir le code postal ci-dessous</label>
+        <br><br>
+        <form>
+            <input type="text" id="codePostal" placeholder=" EX : 61200">
+            <select id="listeVille"></select>
+        </form>
+        
+        <br><br>
+        <image id="img_index" src="./images/navigateur_cadre.png"></image>
+        <a href="bilan_meteo.html"><button class="valider" onclick="">Valider</button></a>
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>

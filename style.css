@@ -1,21 +1,32 @@
 body{
     font-family: cursive;
+    background-image: url("./images/fond.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#titre {
+.titre {
     background-color: rgb(24, 98, 209);
-    opacity: 0.8;
-    width: 55vw;
-    margin: 20px;
+    width: 60vw;
+    margin-top: 20px;
     box-shadow: 1vw 1vw 1vw rgb(13, 53, 114);
 }
 
 h1 {
-    margin-left: 3%;
+    text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
     color: rgb(255,255,255);
     width: 100%;
     display: inline-block;
-    font-size: 4vw;
+    font-size: 3.2vw;
+}
+
+.corps {
+    background: rgba(255, 255, 255, 0.25);
+    width: 50%;
+}
+
+#img_index {
+    width: 50%;
 }
