@@ -43,6 +43,3 @@ codePostal.addEventListener("input", function() {
     }
   });
 }
-
-
-
