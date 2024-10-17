@@ -55,6 +55,13 @@ label, span {
     justify-content: space-between;
 }
 
+.options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1vw;
+}
+
 #codePostal {
     border-radius: 1vw;
     width: 9vw;
