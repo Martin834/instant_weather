@@ -4,12 +4,14 @@ let probaPluie = document.getElementById("ProbaPluie");
 let nbHSoleil = document.getElementById("NbHSoleil");
 var imgBilanMeteo = document.getElementById("imgBilanMeteo");
 let nomVille = document.getElementById("nomVille");
+let choixNbJour = document.getElementById("choixNbJour");
+let nbJour = document.getElementById("nbJour");
 token = "402ff5a4f3425ce73e4f302174b81109e11b83bca8e2d5e82fde474b29e90704";
 
 
-async function fecthMeteo(codeInsee){
+async function fecthMeteo(codeInsee, jour){
     try {
-        const reponse = await fetch("https://api.meteo-concept.com/api/forecast/daily/0?token="+token+"&insee="+codeInsee);
+        const reponse = await fetch("https://api.meteo-concept.com/api/forecast/daily/"+jour+"?token="+token+"&insee="+codeInsee);
         const data = await reponse.json();
         return data;
     } catch(error) {
@@ -29,7 +31,7 @@ function afficherimage(){
 }
 
 async function afficherElements(codeInsee){
-    data = await fecthMeteo(codeInsee);
+    data = await fecthMeteo(codeInsee, 0);
     console.log(data);
     Tmin.textContent = data["forecast"]["tmin"] + "°C";
     Tmax.textContent = data["forecast"]["tmax"] + "°C";
@@ -44,6 +46,8 @@ let codeInsee = urlcourante.split("=")[1];
 
 afficherElements(codeInsee);
 
-
+choixNbJour.addEventListener("input", function() {
+    nbJour.innerHTML = parseInt(choixNbJour.value) + 1;
+});
 
 
