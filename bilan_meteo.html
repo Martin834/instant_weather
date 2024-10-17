@@ -16,26 +16,32 @@
     </div>
 
     <div class="corps">
-        <h2>Voici la météo d'aujourd'hui pour la ville de <span id="nomVille">???</span>.</h2>
+        <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
 
-        <div>
-            <ul>
-                <li><span>Température maximale :</span></li>
-                <li><span id = "Tmax">??? °C</span></li>
-            </ul>
-            <ul>
-                <li><span>Température minimale :</span></li>
-                <li><span id = "Tmin">??? °C</span></li>
-            </ul>
-            <ul>
-                <li><span>Probabilité de pluie :</span></li>
-                <li><span id = "ProbaPluie">???%</span></li>
-            </ul>
-            <ul>
-                <li><span>Nombre d'heures d'ensoleillement :</span></li>
-                <li><span id = "NbHSoleil">???h</span></li>
-            </ul>
+        <div id="conteneurInfos">
+
         </div>
+        <template id="carteMeteo">
+            <div>
+                <h4 id="datePrevision">Jour ???</h4>
+                <ul>
+                    <li><span>Température maximale :</span></li>
+                    <li><span id = "Tmax">??? °C</span></li>
+                </ul>
+                <ul>
+                    <li><span>Température minimale :</span></li>
+                    <li><span id = "Tmin">??? °C</span></li>
+                </ul>
+                <ul>
+                    <li><span>Probabilité de pluie :</span></li>
+                    <li><span id = "probaPluie">???%</span></li>
+                </ul>
+                <ul>
+                    <li><span>Nombre d'heures d'ensoleillement :</span></li>
+                    <li><span id = "nbHSoleil">???h</span></li>
+                </ul>
+            </div>
+        </template>
         
         <a href="index.html"><button class="valider" onclick="">Retour</button></a>
         <image id="imgBilanMeteo"></image>
