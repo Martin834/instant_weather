@@ -10,14 +10,22 @@ let cumulPluie = document.getElementById("CumulPluie");
 let ventMoyen = document.getElementById("VentMoyen");
 let directionVent = document.getElementById("DirectionVent");
 
-token = "402ff5a4f3425ce73e4f302174b81109e11b83bca8e2d5e82fde474b29e90704"; // attention
+token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // attention
 
 let cpt = 0;
+
+let ulLatitude = document.getElementById("ulLatitude");
+let ulLongitude = document.getElementById("ulLongitude");
+let ulCumulPluie = document.getElementById("ulCumulPluie");
+let ulVentMoyen = document.getElementById("ulVentMoyen");
+let ulDirectionVent = document.getElementById("ulDirectionVent");
+
 let latitudeOn = false;
 let longitudeOn = false;
-let comulPluieOn = false;
+let cumulPluieOn = false;
 let ventMoyenOn = false;
 let directionVentOn = false;
+let optionsTrue = [];
 
 let zoneDeTest = document.getElementById("testest");
 
@@ -45,33 +53,45 @@ function afficherimage(){
 async function afficherElements(codeInsee){
     data = await fecthMeteo(codeInsee);
     console.log(data);
-    Tmin.textContent = data["forecast"]["tmin"] + "°C";
-    Tmax.textContent = data["forecast"]["tmax"] + "°C";
+    Tmin.textContent = data["forecast"]["tmin"] + " °C";
+    Tmax.textContent = data["forecast"]["tmax"] + " °C";
     probaPluie.textContent = data["forecast"]["probarain"] + "%";
-    nbHSoleil.textContent = data["forecast"]["sun_hours"] + "H";
-
+    nbHSoleil.textContent = data["forecast"]["sun_hours"] + " h";
     nomVille.textContent = data["city"]["name"];
+    
+    for (i = 0; i < optionsTrue.length; i++) {
+        switch (optionsTrue[i]) {
+            case "latitude": latitude.textContent = data["forecast"]["latitude"];
+            case "longitude": longitude.textContent = data["forecast"]["longitude"];
+            case "cumul_pluie": cumulPluie.textContent = data["forecast"]["etp"] + " mm";
+            case "vent_moyen": ventMoyen.textContent = data["forecast"]["wind10m"] + " km/h";
+            case "direction_vent": directionVent.textContent = data["forecast"]["dirwind10m"] + "°";
+        }
+    }
+
     afficherimage()
 }
+
+function mettreEnDisplayBlock(e) {
+    e.style.display = 'block';
+}
+
 
 let urlcourante = document.location.href;
 urlcourante = urlcourante.split(/[?=&]/);
 
 while (urlcourante[cpt] != "codeInsee") {
-
     switch (urlcourante[cpt]) {
-        case "latitude": latitudeOn = true; break;
-        case "longitude": longitudeOn = true; break;
-        case "cumul_pluie": cumulPluieOn = true; break;
-        case "vent_moyen": ventMoyenOn = true; break;
-        case "direction_vent": directionVentOn = true; break;
+        case "latitude": latitudeOn = true; optionsTrue.push("latitude"); mettreEnDisplayBlock(ulLatitude); break;
+        case "longitude": longitudeOn = true; optionsTrue.push("longitude"); mettreEnDisplayBlock(ulLongitude); break;
+        case "cumul_pluie": cumulPluieOn = true; optionsTrue.push("cumul_pluie"); mettreEnDisplayBlock(ulCumulPluie); break;
+        case "vent_moyen": ventMoyenOn = true; optionsTrue.push("vent_moyen"); mettreEnDisplayBlock(ulVentMoyen); break;
+        case "direction_vent": directionVentOn = true; optionsTrue.push("direction_vent"); mettreEnDisplayBlock(ulDirectionVent); break;
     }
-
     cpt += 1;
 }
 
 let codeInsee = urlcourante[cpt+1];
-
 
 afficherElements(codeInsee);
 

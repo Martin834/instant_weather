@@ -69,3 +69,7 @@ label, span {
     box-shadow: 0.3vw 0.3vw 0vw rgba(0, 0, 0);
     background-color: rgb(231, 226, 236);
 }
+
+#ulLatitude, #ulLongitude, #ulCumulPluie, #ulVentMoyen, #ulDirectionVent {
+    display: none;
+}
