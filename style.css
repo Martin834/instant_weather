@@ -2,10 +2,21 @@
 
 
 body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
     font-family: "Josefin Sans", sans-serif;
-    background-image: url("./images/fond.jpeg");
+    color: #FFFFFF;
+
+}
+.fond{
+    height: 100vh;
+    width: 100%;
+    background: url("./images/fond.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right;
 }
 
 .titre {
@@ -27,38 +38,90 @@ h1 {
 }
 
 .corps {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 0.5vw;
-    width: 40%;
+    width: 45vw;
     margin: 3vw;
     box-shadow: 1vw 1vw 1.5vw rgba(0, 0, 0);
     padding: 1vw;
 }
 
+
+#codePostal {
+    border-radius: 1.9vw;
+    width: 20vw;
+    height: 4vw;
+    font-size: 2vw;
+    margin-left: 12vw;
+    margin-top: 5vw;
+    box-shadow: 0.8vw 0.3vw 0vw rgba(0, 0, 0);
+    background-color: rgb(231, 226, 236);
+}
+
+#listeVille {
+    margin-top: 2vw;
+    margin-left: 12vw;
+    font-size: 1.1vw;
+    width: 20vw;
+    height: 3vw;
+
+}
+
 #img_index {
-    width: 50%;
-    align-self:flex-end;
+    width: 16vw;
+    margin-top: 2vw;
+    margin-left: 14vw;
 }
 
 label {
     color:rgb(255,255,255);
-    font-size: 1.5vw;
+    font-size: 2vw;
     text-shadow: 0.15vw 0.15vw 0vw #000000;
 }
 
-.bouton {
-    display: block;
+.valider {
+  appearance: none;
+  background-color: #b50404;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #513461 0 -8px 10px inset;
+  box-sizing: border-box;
+  color: #ecebeb;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 2.8vw;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  outline: none;
+  padding: 1em 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 17.5vw;
+  margin-top: 2vw;
 }
 
-.form_et_image {
-    display: flex;
-    justify-content: space-between;
+.valider:hover {
+  background-color: #cf9e21;
+  box-shadow: #af440e 0 -6px 8px inset;
+  transform: scale(1.1);
 }
 
-#codePostal {
-    border-radius: 1vw;
-    width: 9vw;
-    font-size: 1vw;
-    box-shadow: 0.3vw 0.3vw 0vw rgba(0, 0, 0);
-    background-color: rgb(231, 226, 236);
+.valider:active {
+  transform: scale(1.5);
 }
+
+@media (min-width: 700px) {
+  .valider{
+    font-size: 1.4em;
+    padding: .75rem 2rem;
+  }
+}
+
+
+

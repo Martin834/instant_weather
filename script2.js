@@ -19,12 +19,22 @@ async function fecthMeteo(codeInsee){
 }
 
 function afficherimage(){
-    if(nbHSoleil.textContent >= "6"){
+    imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
+    if(Tmin.textContent > "20"){
         imgBilanMeteo.src = "images/rabbide_meteo_bbq.png";
     }
-    if(nbHSoleil.textContent < "6"){
-        imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
+    /*---------------------a voir avec vous -----------------(pense bete : lapin soleil / lapin neige / lapin froid / et + condition )
+    else if(Vmoyen.textContent > "50"){
+        imgBilanMeteo.src = "images/rabbide_meteo_vent.png";
     }
+    else if (probaPluie.textContent < "70%" || Cpluie.textContent > "5"){
+        imgBilanMeteo.src = "images/rabbide_meteo_pluie.png";
+    }
+    else if (Vmoyen.textContent > "80" || Cpluie.textContent > "30"){
+        imgBilanMeteo.src = "images/rabbide_meteo_alerte.png";
+    }
+    */
+
    
 }
 
