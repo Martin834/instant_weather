@@ -158,6 +158,6 @@ while (cpt < urlcourante.length) { // Indique les options choisis par l'utilisat
 }
 
 // Récupération du codeInsee
-let codeInsee = urlcourante[cpt+1];
+let codeInsee = urlcourante[2];
 
 remplirElements(codeInsee);
