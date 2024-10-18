@@ -1,7 +1,8 @@
 var imgBilanMeteo = document.getElementById("imgBilanMeteo");
 let nomVille = document.getElementById("nomVille");
 
-token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // attention
+// token qui permet 
+token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52";
 
 let cpt = 0;
 
@@ -26,29 +27,29 @@ const listeMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juill
 
 function stringDate(strDate) {
     let date = new Date(strDate);
-    return listeJour[date.getDay()] + " " + date.getDate() + " " + listeMois[date.getMonth()] + " " + date.getFullYear() +" :";
+    return listeJour[date.getDay()] + " " + date.getDate() + " " + listeMois[date.getMonth()] + " " + date.getFullYear() + " :";
 }
 
-async function fecthMeteo(codeInsee, jour){
+async function fecthMeteo(codeInsee, jour) {
     try {
-        const reponse = await fetch("https://api.meteo-concept.com/api/forecast/daily/"+jour+"?token="+token+"&insee="+codeInsee);
+        const reponse = await fetch("https://api.meteo-concept.com/api/forecast/daily/" + jour + "?token=" + token + "&insee=" + codeInsee);
         const data = await reponse.json();
         return data;
-    } catch(error) {
+    } catch (error) {
         console.error("Erreur lors des requêtes : ", error);
         throw error;
     }
 }
 
-async function remplirElements(codeInsee){
+async function remplirElements(codeInsee) {
     data = await fecthMeteo(codeInsee, 0);
     nomVille.textContent = data["city"]["name"];
 
-    for(var pos in clone){
+    for (var pos in clone) {
         data = await fecthMeteo(codeInsee, pos);
 
         conteneurInfos.appendChild(clone[pos]);
-        if(pos != 0){
+        if (pos != 0) {
             conteneurInfos.children.item(pos).style.display = "none";
         }
 
@@ -70,9 +71,9 @@ async function remplirElements(codeInsee){
     }
 }
 
-function afficherimage(){
+function afficherimage() {
     imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
-    if(Tmin.textContent > "20"){
+    if (Tmin.textContent > "20") {
         imgBilanMeteo.src = "images/rabbide_meteo_bbq.png";
     }
     /*---------------------a voir avec vous -----------------(pense bete : lapin soleil / lapin neige / lapin froid / et + condition )
@@ -87,12 +88,12 @@ function afficherimage(){
     }
     */
 
-   
+
 
 }
 
 
-async function afficherElements(codeInsee){
+async function afficherElements(codeInsee) {
     data = await fecthMeteo(codeInsee);
     console.log(data);
     Tmin.textContent = data["forecast"]["tmin"] + " °C";
@@ -100,10 +101,10 @@ async function afficherElements(codeInsee){
     probaPluie.textContent = data["forecast"]["probarain"] + "%";
     nbHSoleil.textContent = data["forecast"]["sun_hours"] + " h";
     nomVille.textContent = data["city"]["name"];
-    
+
     for (i = 0; i < optionsTrue.length; i++) {
         switch (optionsTrue[i]) {
-            case "latitude": latitude.textContent = data["forecast"]["latitude"]; 
+            case "latitude": latitude.textContent = data["forecast"]["latitude"];
             case "longitude": longitude.textContent = data["forecast"]["longitude"];
             case "cumul_pluie": cumulPluie.textContent = data["forecast"]["rr10"] + " mm";
             case "vent_moyen": ventMoyen.textContent = data["forecast"]["wind10m"] + " km/h";
@@ -114,20 +115,20 @@ async function afficherElements(codeInsee){
     afficherimage()
 }
 
-choixNbJour.addEventListener("input", function() {
+choixNbJour.addEventListener("input", function () {
     let choix = parseInt(choixNbJour.value)
 
     nbJour.innerHTML = choix + 1;
 
-    for(i = 0; i <= choix; i++){
+    for (i = 0; i <= choix; i++) {
         conteneurInfos.children.item(i).style.display = "block";
-     }
-     for(i = choix+1; i <= 6; i++){
+    }
+    for (i = choix + 1; i <= 6; i++) {
         conteneurInfos.children.item(i).style.display = "none";
-     }
+    }
 });
 
-const clone = [ 
+const clone = [
     carteMeteo.content.cloneNode(true),
     carteMeteo.content.cloneNode(true),
     carteMeteo.content.cloneNode(true),
@@ -157,6 +158,6 @@ while (urlcourante[cpt] != "codeInsee") {
     cpt += 1;
 }
 
-let codeInsee = urlcourante[cpt+1];
+let codeInsee = urlcourante[cpt + 1];
 
 remplirElements(codeInsee);

@@ -67,6 +67,10 @@ h1 {
 
 }
 
+#hey {
+    display: none;
+}
+
 #img_index {
     width: 16vw;
     margin-top: 2vw;
