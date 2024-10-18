@@ -9,74 +9,74 @@
     </head>
 
     <body>
-
         <audio autoplay hidden>
             <source src="./audio/bwah.mp3" type="audio/mp3">
             L'audio n'est pas supporté par votre plateforme!!! Dsl
         </audio>
 
-        <div class="titre">
-            <h1>RABBIDE INSTANT WEATHER</h1>
-        </div>
-        <div>
-            
-            <label >Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
-            <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
-        
-        </div>
-
-        <div class="corps">
-
-            <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
-
-            <div id="conteneurInfos">
-
+        <div class="fond">
+            <div class="titre">
+                <h1>RABBIDE INSTANT WEATHER</h1>
             </div>
-            <template id="carteMeteo">
-                <div class = weathercard>
-                    <h4 id="datePrevision">Jour ???</h4>
-                    <ul>
-                        <li><span>Température maximale :</span></li>
-                        <li><span id="Tmax">??? °C</span></li>
-                    </ul>
-                    <ul>
-                        <li><span>Température minimale :</span></li>
-                        <li><span id="Tmin">??? °C</span></li>
-                    </ul>
-                    <ul>
-                        <li><span>Probabilité de pluie :</span></li>
-                        <li><span id="probaPluie">???%</span></li>
-                    </ul>
-                    <ul>
-                        <li><span>Nombre d'heures d'ensoleillement :</span></li>
-                        <li><span id="nbHSoleil">???h</span></li>
-                    </ul>
-                    <ul id="ulLatitude">
-                        <li><span>Latitude :</span></li>
-                        <li><span id="Latitude">???</span></li>
-                    </ul>
-                    <ul id="ulLongitude">
-                        <li><span>Longitude :</span></li>
-                        <li><span id="Longitude">???</span></li>
-                    </ul>
-                    <ul id="ulCumulPluie">
-                        <li><span>Cumul pluie :</span></li>
-                        <li><span id="CumulPluie">??? mm</span></li>
-                    </ul>
-                    <ul id="ulVentMoyen">
-                        <li><span>Vent moyen (10m) :</span></li>
-                        <li><span id="VentMoyen">??? km/h</span></li>
-                    </ul>
-                    <ul id="ulDirectionVent">
-                        <li><span>Direction du vent :</span></li>
-                        <li><span id="DirectionVent">???°</span></li>
-                    </ul>
+            <div>
+                
+                <label >Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
+                <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
+            
+            </div>
+
+            <div class="corps">
+
+                <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
+
+                <div id="conteneurInfos">
                 </div>
+                <template id="carteMeteo">
+                    <div  class = "weathercard">
+                        <h4 id="datePrevision">Jour ???</h4>
+                        <ul>
+                            <li><span>Température maximale :</span></li>
+                            <li><span id="Tmax">??? °C</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Température minimale :</span></li>
+                            <li><span id="Tmin">??? °C</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Probabilité de pluie :</span></li>
+                            <li><span id="probaPluie">???%</span></li>
+                        </ul>
+                        <ul>
+                            <li><span>Nombre d'heures d'ensoleillement :</span></li>
+                            <li><span id="nbHSoleil">???h</span></li>
+                        </ul>
+                        <ul id="ulLatitude">
+                            <li><span>Latitude :</span></li>
+                            <li><span id="Latitude">???</span></li>
+                        </ul>
+                        <ul id="ulLongitude">
+                            <li><span>Longitude :</span></li>
+                            <li><span id="Longitude">???</span></li>
+                        </ul>
+                        <ul id="ulCumulPluie">
+                            <li><span>Cumul pluie :</span></li>
+                            <li><span id="CumulPluie">??? mm</span></li>
+                        </ul>
+                        <ul id="ulVentMoyen">
+                            <li><span>Vent moyen (10m) :</span></li>
+                            <li><span id="VentMoyen">??? km/h</span></li>
+                        </ul>
+                        <ul id="ulDirectionVent">
+                            <li><span>Direction du vent :</span></li>
+                            <li><span id="DirectionVent">???°</span></li>
+                        </ul>
+                    </div>
 
-            </template>
+                </template>
 
-            <a href="index.html" class="valider">Retour</a>
-            <img id="imgBilanMeteo" src="???" alt="image météo">
+                <a href="index.html" class="valider">Retour</a>
+                <img id="imgBilanMeteo" src="???" alt="image météo">
+            </div>
         </div>
         <script src="script2.js"></script>
 

@@ -57,7 +57,7 @@ async function fecthMeteo(codeInsee, jour){
 async function remplirElements(codeInsee){
     data = await fecthMeteo(codeInsee, 0);
     nomVille.textContent = data["city"]["name"];
-
+    afficherimage(data["forecast"]["weather"]);
     for (var pos in clone) {
         data = await fecthMeteo(codeInsee, pos);
 
@@ -83,26 +83,23 @@ async function remplirElements(codeInsee){
         }
     }
 }
-
-function afficherimage() {
-    imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
-    if (Tmin.textContent > "20") {
-        imgBilanMeteo.src = "images/rabbide_meteo_bbq.png";
+function afficherimage(variable) {
+    imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";//nuageux
+    if(variable == 0 ){//soleil
+        imgBilanMeteo.src = "images/rabbide_meteo_soleil.jpg";
     }
-    /*---------------------a voir avec vous -----------------(pense bete : lapin soleil / lapin neige / lapin froid / et + condition )
-    else if(Vmoyen.textContent > "50"){
-        imgBilanMeteo.src = "images/rabbide_meteo_vent.png";
-    }
-    else if (probaPluie.textContent < "70%" || Cpluie.textContent > "5"){
+    else if(10 <= variable && variable <= 19 ){//pluie
         imgBilanMeteo.src = "images/rabbide_meteo_pluie.png";
     }
-    else if (Vmoyen.textContent > "80" || Cpluie.textContent > "30"){
+    else if((20 <= variable && variable <= 29) ){//neige
+        imgBilanMeteo.src = "images/rabbide_meteo_neige.jpg";
+    }
+    else if((40 <= variable && variable <= 79) ){//vent
+        imgBilanMeteo.src = "images/rabbide_meteo_vent.png";
+    }
+    else if(100 <= variable && variable <= 200 ){//alerte meteo
         imgBilanMeteo.src = "images/rabbide_meteo_alerte.png";
     }
-    */
-
-
-
 }
 
 
