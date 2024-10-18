@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./style.css" rel="stylesheet">
-    
+
         <title>Rabbide Meteo</title>
     </head>
+
     <body>
         <audio autoplay hidden>
             <source src="./audio/generique.mp3" type="audio/mp3">
             L'audio n'est pas supporté par votre plateforme!!! Dsl
         </audio>
         <div class="fond">
-        <div class="titre">
-            <h1>RABBIDE INSTANT WEATHER</h1>
-        </div>
+            <div class="titre">
+                <h1>RABBIDE INSTANT WEATHER</h1>
+            </div>
 
-        <div class="corps">
-            <label for="codePostal">Merci de saisir le code postal ci-dessous !! 🐇</label>
-            
-            <div class="form_et_image">
-                <div>
-                    <br><br>
+            <div class="corps">
+                <label for="codePostal">Merci de saisir le code postal ci-dessous !! 🐇</label>
+                
+                <div class="form_et_image">
+                    <div>
+                        <form method="get" action="bilan_meteo.html">
 
-                    <form method="get" action="bilan_meteo.html">
-
-                        <input type="text" name="codePostal" id="codePostal" placeholder=" Exemple : '61200'">
-
-                        <div class="options">
-                            <div>
-                                <input type="checkbox" id="latitude" name="latitude">
-                                <label for="latitude">Latitude</label>
+                            <input type="text" name="codePostal" id="codePostal" placeholder=" Exemple : '61200'">
+                            <select id="listeVille" name="codeInsee" required></select>
+                            <label id="hey" for="listeVille">.</label>
+                            <div class="options">
+                                <div>
+                                    <input type="checkbox" id="latitude" name="latitude">
+                                    <label for="latitude">Latitude</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="longitude" name="longitude">
+                                    <label for="longitude">Longitude</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="cumul_pluie" name="cumul_pluie">
+                                    <label for="cumul_pluie">Cumul pluie</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="vent_moyen" name="vent_moyen">
+                                    <label for="vent_moyen">Vent moyen (10m)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="direction_vent" name="direction_vent">
+                                    <label for="direction_vent">Direction du vent</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="checkbox" id="longitude" name="longitude">
-                                <label for="longitude">Longitude</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="cumul_pluie" name="cumul_pluie">
-                                <label for="cumul_pluie">Cumul pluie</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="vent_moyen" name="vent_moyen">
-                                <label for="vent_moyen">Vent moyen (10m)</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="direction_vent" name="direction_vent">
-                                <label for="direction_vent">Direction du vent</label>
-                            </div>
-                        </div>
-                        <select id="listeVille" name="codeInsee" required>
-                            <option label="???"></option>
-                        </select>
-                        <label id="hey" for="listeVille">.</label>
-                        <input class="valider" type="submit" value="Valider">
-                    </form>
+                            <img id="img_index" alt="Image d'un lapin crétin brisant et sortant d'un écran" src="./images/navigateur_cadre.png">
+                            <input type="submit" class="valider" value="Valider" >
+                        </form>
+                    </div>
                 </div>   
             </div>
-                
-            <img id="img_index" alt="Image d'un lapin crétin brisant et sortant d'un écran" src="./images/navigateur_cadre.png">
-
-            </div>
         </div>
-
         <script src="script.js"></script>
     </body>
+
 </html>
