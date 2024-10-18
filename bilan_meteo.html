@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
         <title>Document</title>
     </head>
 
@@ -19,10 +20,8 @@
             <h1>RABBIDE INSTANT WEATHER</h1>
         </div>
         <div>
-            
-            <label >Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
+            <label for="choixNbJour">Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
             <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
-        
         </div>
 
         <div class="corps">
@@ -34,7 +33,7 @@
             </div>
             <template id="carteMeteo">
                 <div>
-                    <h4 id="datePrevision">Jour ???</h4>
+                    <h3 id="datePrevision">Jour ???</h3>
                     <ul>
                         <li><span>Température maximale :</span></li>
                         <li><span id="Tmax">??? °C</span></li>
@@ -75,8 +74,8 @@
 
             </template>
 
-            <a href="index.html" class="valider">Retour</a>
-            <img id="imgBilanMeteo" src="???" alt="image météo">
+            <a href="index.html"><button class="valider" onclick="">Retour</button></a>
+            <image id="imgBilanMeteo"></image>
         </div>
         <script src="script2.js"></script>
 
