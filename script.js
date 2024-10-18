@@ -3,7 +3,7 @@ listeVille.style.display = "none";
 let codePostal = document.getElementById("codePostal"); // Entrée textuel pour le code postal
 console.log(listeVille.style.appearance)
 
-codePostal.addEventListener("input", function() { //Quand on entre un chiffre dans codePostal
+codePostal.addEventListener("input", function() { //Quand on entre du texte dans codePostal
   
   //Vérifie que le texte entré ne comporte que des chiffres
   code = "";

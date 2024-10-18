@@ -1,34 +1,39 @@
-var imgBilanMeteo = document.getElementById("imgBilanMeteo");
-let nomVille = document.getElementById("nomVille");
+let imgBilanMeteo = document.getElementById("imgBilanMeteo"); // Image correspondant au bilan météo
+let nomVille = document.getElementById("nomVille"); // Partie du titre contenant le nom de la commune choisie
 
-token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // attention
+const token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // Token pour accéder à l'API
 
 let cpt = 0;
+let optionsTrue = []; // Liste contenant les choix d'informations complémentaires de la V2s
 
-let ulLatitude = document.getElementById("ulLatitude");
-let ulLongitude = document.getElementById("ulLongitude");
-let ulCumulPluie = document.getElementById("ulCumulPluie");
-let ulVentMoyen = document.getElementById("ulVentMoyen");
-let ulDirectionVent = document.getElementById("ulDirectionVent");
+/*let zoneDeTest = document.getElementById("testest");*/
 
-let optionsTrue = [];
-
-let zoneDeTest = document.getElementById("testest");
-
-let choixNbJour = document.getElementById("choixNbJour");
-let nbJour = document.getElementById("nbJour");
-let carteMeteo = document.getElementById("carteMeteo");
-let conteneurInfos = document.getElementById("conteneurInfos");
+let choixNbJour = document.getElementById("choixNbJour"); // Jauge permettant de choisir le nombre de jour de prévisions à afficher
+let nbJour = document.getElementById("nbJour"); // Partie du label de la jauge exprimant le nombre de jour choisi
+let carteMeteo = document.getElementById("carteMeteo"); // Template contenant les informations météo
+let conteneurInfos = document.getElementById("conteneurInfos"); // Endroit où l'on affiche les différentes template clonées
 
 const listeJour = ["Lundi", "Mardi", "Mercredi", "Jeudi", " Vendredi", "Samedi", "Dimanche"];
 const listeMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
 
-
+/**
+ * Transforme une chaîne de caractère représentant une date sous un autre format spécifié dans le returns
+ * 
+ * @param {*} strDate 
+ * @returns une chaîne de caractère représentant un date sous la forme <JOUR> <DATE> <MOIS> <ANNEE>
+ */
 function stringDate(strDate) {
     let date = new Date(strDate);
     return listeJour[date.getDay()] + " " + date.getDate() + " " + listeMois[date.getMonth()] + " " + date.getFullYear() +" :";
 }
 
+/**
+ * Cherche les prévisions météo suivant une commune et un jour
+ * 
+ * @param {*} codeInsee 
+ * @param {*} jour 
+ * @returns une liste de prévision météo
+ */
 async function fecthMeteo(codeInsee, jour){
     try {
         const reponse = await fetch("https://api.meteo-concept.com/api/forecast/daily/"+jour+"?token="+token+"&insee="+codeInsee);
@@ -40,6 +45,11 @@ async function fecthMeteo(codeInsee, jour){
     }
 }
 
+/**
+ * Crée les différents templates avec les informations météo correspondantes
+ * 
+ * @param {*} codeInsee 
+ */
 async function remplirElements(codeInsee){
     data = await fecthMeteo(codeInsee, 0);
     nomVille.textContent = data["city"]["name"];
@@ -91,34 +101,13 @@ function afficherimage(){
 
 }
 
-
-async function afficherElements(codeInsee){
-    data = await fecthMeteo(codeInsee);
-    console.log(data);
-    Tmin.textContent = data["forecast"]["tmin"] + " °C";
-    Tmax.textContent = data["forecast"]["tmax"] + " °C";
-    probaPluie.textContent = data["forecast"]["probarain"] + "%";
-    nbHSoleil.textContent = data["forecast"]["sun_hours"] + " h";
-    nomVille.textContent = data["city"]["name"];
-    
-    for (i = 0; i < optionsTrue.length; i++) {
-        switch (optionsTrue[i]) {
-            case "latitude": latitude.textContent = data["forecast"]["latitude"]; 
-            case "longitude": longitude.textContent = data["forecast"]["longitude"];
-            case "cumul_pluie": cumulPluie.textContent = data["forecast"]["rr10"] + " mm";
-            case "vent_moyen": ventMoyen.textContent = data["forecast"]["wind10m"] + " km/h";
-            case "direction_vent": directionVent.textContent = data["forecast"]["dirwind10m"] + "°";
-        }
-    }
-
-    afficherimage()
-}
-
-choixNbJour.addEventListener("input", function() {
+choixNbJour.addEventListener("input", function() { //Quand on modifie le niveau de la jauge
     let choix = parseInt(choixNbJour.value)
 
+    // Affiche le nombre de jour choisi
     nbJour.innerHTML = choix + 1;
 
+    // Affiche le nombre de templates correspondant
     for(i = 0; i <= choix; i++){
         conteneurInfos.children.item(i).style.display = "block";
      }
@@ -127,7 +116,7 @@ choixNbJour.addEventListener("input", function() {
      }
 });
 
-const clone = [ 
+const clone = [ // Liste des tempates
     carteMeteo.content.cloneNode(true),
     carteMeteo.content.cloneNode(true),
     carteMeteo.content.cloneNode(true),
@@ -137,16 +126,20 @@ const clone = [
     carteMeteo.content.cloneNode(true)
 ];
 
-
+/**
+ * Permet d'afficher un élément en block
+ * 
+ * @param {*} e 
+ */
 function mettreEnDisplayBlock(e) {
     e.style.display = 'block';
 }
 
-
+// Récupération de l'URL
 let urlcourante = document.location.href;
 urlcourante = urlcourante.split(/[?=&]/);
 
-while (urlcourante[cpt] != "codeInsee") {
+while (urlcourante[cpt] != "codeInsee") { // Indique les options choisis par l'utilisateur
     switch (urlcourante[cpt]) {
         case "latitude": optionsTrue.push("latitude"); break;
         case "longitude": optionsTrue.push("longitude"); break;
@@ -157,6 +150,7 @@ while (urlcourante[cpt] != "codeInsee") {
     cpt += 1;
 }
 
+// Récupération du codeInsee
 let codeInsee = urlcourante[cpt+1];
 
 remplirElements(codeInsee);
