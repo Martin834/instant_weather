@@ -68,7 +68,27 @@ async function remplirElements(codeInsee){
             }
         }
     }
-    
+}
+
+function afficherimage(){
+    imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";
+    if(Tmin.textContent > "20"){
+        imgBilanMeteo.src = "images/rabbide_meteo_bbq.png";
+    }
+    /*---------------------a voir avec vous -----------------(pense bete : lapin soleil / lapin neige / lapin froid / et + condition )
+    else if(Vmoyen.textContent > "50"){
+        imgBilanMeteo.src = "images/rabbide_meteo_vent.png";
+    }
+    else if (probaPluie.textContent < "70%" || Cpluie.textContent > "5"){
+        imgBilanMeteo.src = "images/rabbide_meteo_pluie.png";
+    }
+    else if (Vmoyen.textContent > "80" || Cpluie.textContent > "30"){
+        imgBilanMeteo.src = "images/rabbide_meteo_alerte.png";
+    }
+    */
+
+   
+
 }
 
 
@@ -140,5 +160,3 @@ while (urlcourante[cpt] != "codeInsee") {
 let codeInsee = urlcourante[cpt+1];
 
 remplirElements(codeInsee);
-
-
