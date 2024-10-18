@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sixtyfour+Convergence&display=swap');
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,7 +10,8 @@ body{
     color: #FFFFFF;
 
 }
-.fond{
+
+.fond {
     height: 100vh;
     width: 100%;
     background: url("./images/fond.jpeg");
@@ -22,7 +23,7 @@ body{
 .titre {
     background-color: #FFFFFF;
     color: #000000;
-    border-top:  1vw;
+    border-top: 1vw;
     width: 65vw;
     margin-top: 20px;
     box-shadow: 1vw 1vw 1vw #3c2b3f;
@@ -49,17 +50,18 @@ h1 {
 
 #codePostal {
     border-radius: 1.9vw;
-    width: 20vw;
-    height: 4vw;
+    width: 18vw;
+    height: 3.5vw;
     font-size: 2vw;
-    margin-left: 12vw;
-    margin-top: 5vw;
-    box-shadow: 0.8vw 0.3vw 0vw rgba(0, 0, 0);
+    margin-left: 13vw;
+    margin-top: 1.2vw;
+    margin-bottom: 1.2vw;
+    box-shadow: 0.6vw 0.3vw 0vw rgba(0, 0, 0);
     background-color: rgb(231, 226, 236);
 }
 
 #listeVille {
-    margin-top: 2vw;
+    border-radius: 1vw;
     margin-left: 12vw;
     font-size: 1.1vw;
     width: 20vw;
@@ -70,46 +72,54 @@ h1 {
 #img_index {
     width: 16vw;
     margin-top: 2vw;
-    margin-left: 14vw;
+    margin-left: 3vw;
 }
 
-label, span {
-    color:rgb(255,255,255);
+input[type=checkbox]{
+    margin-top: 1vw;
+    margin-right: 0.6vw;
+    width: 2vw;
+    height: 2vw;
+}
+
+
+label,span {
+    color: rgb(255, 255, 255);
     font-size: 2vw;
     text-shadow: 0.15vw 0.15vw 0vw #000000;
 }
 
 .valider {
-  appearance: none;
-  background-color: #b50404;
-  border-radius: 40em;
-  border-style: none;
-  box-shadow: #513461 0 -8px 10px inset;
-  box-sizing: border-box;
-  color: #ecebeb;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,sans-serif;
-  font-size: 2.8vw;
-  font-weight: 700;
-  letter-spacing: -.24px;
-  outline: none;
-  padding: 1em 1.3rem;
-  quotes: auto;
-  text-align: center;
-  text-decoration: none;
-  transition: all .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-left: 17.5vw;
-  margin-top: 2vw;
+    appearance: none;
+    background-color: #b50404;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: #513461 0 -8px 10px inset;
+    box-sizing: border-box;
+    color: #ecebeb;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 2.6vw;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    outline: none;
+    padding: 1em 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 30vw;
+    margin-top: -2vw;
 }
 
 .valider:hover {
-  background-color: #cf9e21;
-  box-shadow: #af440e 0 -6px 8px inset;
-  transform: scale(1.1);
+    background-color: #cf9e21;
+    box-shadow: #af440e 0 -6px 8px inset;
+    transform: scale(1.1);
 }
 
 .options {
@@ -119,26 +129,17 @@ label, span {
     margin: 1vw;
 }
 
-#codePostal {
-    border-radius: 1vw;
-    width: 9vw;
-    font-size: 1vw;
-    box-shadow: 0.3vw 0.3vw 0vw rgba(0, 0, 0);
-    background-color: rgb(231, 226, 236);
-}
-
-#ulLatitude, #ulLongitude, #ulCumulPluie, #ulVentMoyen, #ulDirectionVent {
+#ulLatitude,#ulLongitude,#ulCumulPluie,#ulVentMoyen,#ulDirectionVent {
     display: none;
 }
 
 .valider:active {
-  transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 @media (min-width: 700px) {
-  .valider{
-    font-size: 1.4em;
-    padding: .75rem 2rem;
-  }
+    .valider {
+        font-size: 1.4em;
+        padding: .75rem 2rem;
+    }
 }
-

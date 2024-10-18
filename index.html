@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./style.css" rel="stylesheet">
-    
+
         <title>Rabbide Meteo</title>
     </head>
+
     <body>
         <audio autoplay hidden>
             <source src="./audio/generique.mp3" type="audio/mp3">
             L'audio n'est pas supporté par votre plateforme!!! Dsl
         </audio>
         <div class="fond">
-        <div class="titre">
-            <h1>RABBIDE INSTANT WEATHER</h1>
-        </div>
-
-        <div class="corps">
-            <label>Merci de saisir le code postal ci-dessous !! 🐇</label>
-            
-            <div class="form_et_image">
-                <div>
-                    <br><br>
-
-                    <form method="get" action="bilan_meteo.html">
-
-                        <input type="text" id="codePostal" placeholder=" Exemple : '61200'">
-
-                        <div class="options">
-                            <div>
-                                <input type="checkbox" id="latitude" name="latitude">
-                                <label>Latitude</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="longitude" name="longitude">
-                                <label>Longitude</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="cumul_pluie" name="cumul_pluie">
-                                <label>Cumul pluie</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="vent_moyen" name="vent_moyen">
-                                <label>Vent moyen (10m)</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="direction_vent" name="direction_vent">
-                                <label>Direction du vent</label>
-                            </div>
-                        </div>
-
-                        <select id="listeVille" name="codeInsee" required></select>
-                        <input class="bouton" type="submit" class="valider" value="Valider"/>
-                    </form>
-                </div>   
+            <div class="titre">
+                <h1>RABBIDE INSTANT WEATHER</h1>
             </div>
+
+            <div class="corps">
+                <label>Merci de saisir le code postal ci-dessous !! 🐇</label>
+
+                <div class="form_et_image">
+                    <div>
+                        <form method="get" action="bilan_meteo.html">
+                            <input type="text" id="codePostal" placeholder=" Exemple : '61200'">
+                            <select id="listeVille" name="codeInsee" required></select>
+                            <div class="options">
+                                <div>
+                                    <input type="checkbox" id="latitude" name="latitude">
+                                    <label>Latitude</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="longitude" name="longitude">
+                                    <label>Longitude</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="cumul_pluie" name="cumul_pluie">
+                                    <label>Cumul pluie</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="vent_moyen" name="vent_moyen">
+                                    <label>Vent moyen (10m)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="direction_vent" name="direction_vent">
+                                    <label>Direction du vent</label>
+                                </div>
+                            </div>
+                            <image id="img_index" src="./images/navigateur_cadre.png"></image>
+                            <input type="submit" class="valider" value="Valider" >
+                        </form>
+                    </div>
+                </div>
+
                 
-                <image id="img_index" src="./images/navigateur_cadre.png"></image>
             </div>
         </div>
 
         <script src="script.js"></script>
     </body>
+
 </html>
