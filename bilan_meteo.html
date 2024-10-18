@@ -16,52 +16,62 @@
     <div class="titre">
         <h1>RABBIDE INSTANT WEATHER</h1>
     </div>
+    <div>
+        <label for="nbJour">Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
+        <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
+    </div>
 
     <h2 id="testest"></h2>
 
     <div class="corps">
-        <label>Voici la météo d'aujourd'hui pour la ville de <span id="nomVille">???</span>.</label>
 
+        <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
 
-        <div>
-            <ul>
-                <li><span>Température maximale :</span></li>
-                <li><span id = "Tmax">??? °C</span></li>
-            </ul>
-            <ul>
-                <li><span>Température minimale :</span></li>
-                <li><span id = "Tmin">??? °C</span></li>
-            </ul>
-            <ul>
-                <li><span>Probabilité de pluie :</span></li>
-                <li><span id = "ProbaPluie">???%</span></li>
-            </ul>
-            <ul>
-                <li><span>Nombre d'heures d'ensoleillement :</span></li>
-                <li><span id = "NbHSoleil">???h</span></li>
-            </ul>
+        <div id="conteneurInfos">
 
-            <ul id="ulLatitude">
-                <li><span>Latitude :</span></li>
-                <li><span id = "Latitude">???</span></li>
-            </ul>
-            <ul id="ulLongitude" hidden>
-                <li><span>Longitude :</span></li>
-                <li><span id = "Longitude">???</span></li>
-            </ul>
-            <ul id="ulCumulPluie" hidden>
-                <li><span>Cumul pluie :</span></li>
-                <li><span id = "CumulPluie">??? mm</span></li>
-            </ul>
-            <ul id="ulVentMoyen" hidden>
-                <li><span>Vent moyen (10m) :</span></li>
-                <li><span id = "VentMoyen">??? km/h</span></li>
-            </ul>
-            <ul id="ulDirectionVent" hidden>
-                <li><span>Direction du vent :</span></li>
-                <li><span id = "DirectionVent">???°</span></li>
-            </ul>
         </div>
+        <template id="carteMeteo">
+            <div>
+                <h4 id="datePrevision">Jour ???</h4>
+                <ul>
+                    <li><span>Température maximale :</span></li>
+                    <li><span id = "Tmax">??? °C</span></li>
+                </ul>
+                <ul>
+                    <li><span>Température minimale :</span></li>
+                    <li><span id = "Tmin">??? °C</span></li>
+                </ul>
+                <ul>
+                    <li><span>Probabilité de pluie :</span></li>
+                    <li><span id = "probaPluie">???%</span></li>
+                </ul>
+                <ul>
+                    <li><span>Nombre d'heures d'ensoleillement :</span></li>
+                    <li><span id = "nbHSoleil">???h</span></li>
+                </ul>
+                <ul id="ulLatitude">
+                    <li><span>Latitude :</span></li>
+                    <li><span id = "Latitude">???</span></li>
+                </ul>
+                <ul id="ulLongitude" >
+                    <li><span>Longitude :</span></li>
+                    <li><span id = "Longitude">???</span></li>
+                </ul>
+                <ul id="ulCumulPluie" >
+                    <li><span>Cumul pluie :</span></li>
+                    <li><span id = "CumulPluie">??? mm</span></li>
+                </ul>
+                <ul id="ulVentMoyen" >
+                    <li><span>Vent moyen (10m) :</span></li>
+                    <li><span id = "VentMoyen">??? km/h</span></li>
+                </ul>
+                <ul id="ulDirectionVent" >
+                    <li><span>Direction du vent :</span></li>
+                    <li><span id = "DirectionVent">???°</span></li>
+                </ul>
+            </div>
+            
+        </template>
         
         <a href="index.html"><button class="valider" onclick="">Retour</button></a>
         <image id="imgBilanMeteo"></image>
