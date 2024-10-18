@@ -63,7 +63,7 @@ async function afficherElements(codeInsee){
         switch (optionsTrue[i]) {
             case "latitude": latitude.textContent = data["forecast"]["latitude"];
             case "longitude": longitude.textContent = data["forecast"]["longitude"];
-            case "cumul_pluie": cumulPluie.textContent = data["forecast"]["etp"] + " mm";
+            case "cumul_pluie": cumulPluie.textContent = data["forecast"]["rr10"] + " mm";
             case "vent_moyen": ventMoyen.textContent = data["forecast"]["wind10m"] + " km/h";
             case "direction_vent": directionVent.textContent = data["forecast"]["dirwind10m"] + "°";
         }
