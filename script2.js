@@ -71,7 +71,6 @@ async function remplirElements(codeInsee){
         conteneurInfos.children.item(pos).querySelector("#Tmax").textContent = data["forecast"]["tmax"] + "°C";
         conteneurInfos.children.item(pos).querySelector("#probaPluie").textContent = data["forecast"]["probarain"] + "%";
         conteneurInfos.children.item(pos).querySelector("#nbHSoleil").textContent = data["forecast"]["sun_hours"] + "H";
-        console.log(conteneurInfos.children.item(pos).querySelector("#Latitude"));
         for (i = 0; i < optionsTrue.length; i++) {
             switch (optionsTrue[i]) {
                 case "latitude": conteneurInfos.children.item(pos).querySelector("#Latitude").textContent = data["forecast"]["latitude"]; mettreEnDisplayBlock(conteneurInfos.children.item(pos).querySelector("#ulLatitude")); break;
@@ -146,8 +145,8 @@ function mettreEnDisplayBlock(e) {
 // Récupération de l'URL
 let urlcourante = document.location.href;
 urlcourante = urlcourante.split(/[?=&]/);
-
-while (urlcourante[cpt] != "codeInsee") { // Indique les options choisis par l'utilisateur
+console.log(urlcourante)
+while (cpt < urlcourante.length) { // Indique les options choisis par l'utilisateur
     switch (urlcourante[cpt]) {
         case "latitude": optionsTrue.push("latitude"); break;
         case "longitude": optionsTrue.push("longitude"); break;
