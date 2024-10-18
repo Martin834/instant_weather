@@ -45,7 +45,6 @@ async function fetchCommunes(codePostal) {
     throw error;
   }
 }
-
 /**
  * Remplit la liste déroulante avec les différentes communes
  * 

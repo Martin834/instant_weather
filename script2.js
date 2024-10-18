@@ -1,4 +1,3 @@
-let imgBilanMeteo = document.getElementById("imgBilanMeteo"); // Image correspondant au bilan météo
 let nomVille = document.getElementById("nomVille"); // Partie du titre contenant le nom de la commune choisie
 
 const token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // Token pour accéder à l'API
@@ -57,7 +56,7 @@ async function fecthMeteo(codeInsee, jour){
 async function remplirElements(codeInsee){
     data = await fecthMeteo(codeInsee, 0);
     nomVille.textContent = data["city"]["name"];
-    afficherimage(data["forecast"]["weather"]);
+   
     for (var pos in clone) {
         data = await fecthMeteo(codeInsee, pos);
 
@@ -80,24 +79,37 @@ async function remplirElements(codeInsee){
                 case "direction_vent": conteneurInfos.children.item(pos).querySelector("#DirectionVent").textContent = data["forecast"]["dirwind10m"] + "°"; mettreEnDisplayBlock(conteneurInfos.children.item(pos).querySelector("#ulDirectionVent")); break;
             }
         }
+        afficherimage(conteneurInfos.children.item(pos).querySelector("#imgBilanMeteo"), data["forecast"]["weather"]);
     }
 }
-function afficherimage(variable) {
+
+/**
+ * Choisis l'image approprié suivant les infos météos
+ * 
+ * @param {*} imgBilanMeteo 
+ * @param {*} variable 
+ */
+function afficherimage(imgBilanMeteo, variable) {
     imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";//nuageux
     if(variable == 0 ){//soleil
         imgBilanMeteo.src = "images/rabbide_meteo_soleil.jpg";
+        imgBilanMeteo.alt = "Image météo avec un lapin crétin sous le soleil";
     }
     else if(10 <= variable && variable <= 19 ){//pluie
         imgBilanMeteo.src = "images/rabbide_meteo_pluie.png";
+        imgBilanMeteo.alt = "Image avec un lapin crétin dans l'eau sous la pluie";
     }
     else if((20 <= variable && variable <= 29) ){//neige
         imgBilanMeteo.src = "images/rabbide_meteo_neige.jpg";
+        imgBilanMeteo.alt = "Image météo avec des lapins crétins sous la neige";
     }
     else if((40 <= variable && variable <= 79) ){//vent
         imgBilanMeteo.src = "images/rabbide_meteo_vent.png";
+        imgBilanMeteo.alt = "Image météo avec un lapin crétin volant dans le vent";
     }
     else if(100 <= variable && variable <= 200 ){//alerte meteo
         imgBilanMeteo.src = "images/rabbide_meteo_alerte.png";
+        imgBilanMeteo.alt = "Image météo avec un lapin crétin fille tenant une pancarte alerte météo";
     }
 }
 
