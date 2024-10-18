@@ -14,8 +14,6 @@ let ulDirectionVent = document.getElementById("ulDirectionVent");
 
 let optionsTrue = [];
 
-let zoneDeTest = document.getElementById("testest");
-
 let choixNbJour = document.getElementById("choixNbJour");
 let nbJour = document.getElementById("nbJour");
 let carteMeteo = document.getElementById("carteMeteo");
