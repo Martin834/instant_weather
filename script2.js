@@ -91,6 +91,7 @@ async function remplirElements(codeInsee){
  */
 function afficherimage(imgBilanMeteo, variable) {
     imgBilanMeteo.src = "images/rabbide_meteo_nuageux.png";//nuageux
+    imgBilanMeteo.alt = "Image météo avec un lapin crétin naviguant sur un nuage";
     if(variable == 0 ){//soleil
         imgBilanMeteo.src = "images/rabbide_meteo_soleil.jpg";
         imgBilanMeteo.alt = "Image météo avec un lapin crétin sous le soleil";
