@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
     <head>
         <meta charset="UTF-8">
@@ -15,43 +15,36 @@
             L'audio n'est pas supporté par votre plateforme!!! Dsl
         </audio>
 
-
         <div class="fond">
             <div class="titre">
                 <h1>RABBIDE INSTANT WEATHER</h1>
             </div>
-            <div>
-                
-                <label >Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
-                <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
+             <div class = "textBouton">
+                    <label>Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
+                    <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
             
-            </div>
-
-            <div class="corps">
-
+                </div>
+            <div class="corps">  
                 <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
-
-                <div id="conteneurInfos">
-
-            </div>
+                <div id="conteneurInfos"></div>
                 <template id="carteMeteo">
                     <div  class = "weathercard">
-                        <h4 id="datePrevision">Jour ???</h4>
+                        <h3 id="datePrevision">Jour ???</h3>
                         <ul>
-                            <li><span>Température maximale :</span></li>
-                            <li><span id="Tmax">??? °C</span></li>
+                            <span>Température maximale :</span>
+                            <span id="Tmax">??? °C</span>
                         </ul>
                         <ul>
-                            <li><span>Température minimale :</span></li>
-                            <li><span id="Tmin">??? °C</span></li>
+                            <span>Température minimale :</span>
+                            <span id="Tmin">??? °C</span>
                         </ul>
                         <ul>
-                            <li><span>Probabilité de pluie :</span></li>
-                            <li><span id="probaPluie">???%</span></li>
+                            <span>Probabilité de pluie :</span>
+                            <span id="probaPluie">???%</span>
                         </ul>
                         <ul>
-                            <li><span>Nombre d'heures d'ensoleillement :</span></li>
-                            <li><span id="nbHSoleil">???h</span></li>
+                            <span>Nombre d'heures d'ensoleillement :</span>
+                            <span id="nbHSoleil">???h</span>
                         </ul>
                         <ul id="ulLatitude">
                             <li><span>Latitude :</span></li>
@@ -75,8 +68,9 @@
                         </ul>
                     </div>
                 
-                <img id="imgBilanMeteo" src="???" alt="image météo">
+                
                 </template>
+                <img id="imgBilanMeteo" src="???" alt="image météo">
                 <a href="index.html" class="valider">Retour</a>
             </div>
 
