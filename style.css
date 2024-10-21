@@ -147,3 +147,14 @@ label,span {
         padding: .75rem 2rem;
     }
 }
+
+.weathercard {
+    animation: slide 0.5s ;
+}
+
+@keyframes slide {
+    0% { opacity: 0%;
+    transform: scaleX(0.8)}
+    100%  { opacity: 100%;
+        transform: scaleX(1)  }
+  }

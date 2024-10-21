@@ -1,15 +1,16 @@
 let nomVille = document.getElementById("nomVille"); // Partie du titre contenant le nom de la commune choisie
 
-const token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // Token pour accéder à l'API
+const token = "402ff5a4f3425ce73e4f302174b81109e11b83bca8e2d5e82fde474b29e90704"; // Token pour accéder à l'API
 
+let jourChoisi = 0; // Entier indiquant le jour choisi
+let changerGauche = document.getElementById("changerGauche"); // Bouton pour voir les prévisions d'avant
+let changerDroite = document.getElementById("changerDroite"); // Bouton pour voir les prévisions d'après
 
-let cpt = 0;
-let optionsTrue = []; // Liste contenant les choix d'informations complémentaires de la V2s
+let cpt = 0; // Compteur pour parcourir l'URL
+let optionsTrue = []; // Liste contenant les choix d'informations complémentaires de la V2
 
 /*let zoneDeTest = document.getElementById("testest");*/
 
-let choixNbJour = document.getElementById("choixNbJour"); // Jauge permettant de choisir le nombre de jour de prévisions à afficher
-let nbJour = document.getElementById("nbJour"); // Partie du label de la jauge exprimant le nombre de jour choisi
 let carteMeteo = document.getElementById("carteMeteo"); // Template contenant les informations météo
 let conteneurInfos = document.getElementById("conteneurInfos"); // Endroit où l'on affiche les différentes template clonées
 
@@ -114,22 +115,33 @@ function afficherimage(imgBilanMeteo, variable) {
     }
 }
 
+changerGauche.addEventListener("click", function() { // Quand on appuie pour voir les prévisions précédentes
 
-choixNbJour.addEventListener("input", function() { //Quand on modifie le niveau de la jauge
-
-    let choix = parseInt(choixNbJour.value)
-
-    // Affiche le nombre de jour choisi
-    nbJour.innerHTML = choix + 1;
-
-    // Affiche le nombre de templates correspondant
-    for(i = 0; i <= choix; i++){
-
-        conteneurInfos.children.item(i).style.display = "block";
+    if(jourChoisi != 0){
+        mettreEnDisplayNone(conteneurInfos.children.item(jourChoisi)); // On cache l'ancienne séléction
+        jourChoisi--;
+        mettreEnDisplayBlock(conteneurInfos.children.item(jourChoisi)); // On affiche la nouvelle
     }
-    for (i = choix + 1; i <= 6; i++) {
-        conteneurInfos.children.item(i).style.display = "none";
+
+    if(jourChoisi == 0){
+        changerGauche.disabled = true; // On désactive le bouton qui va vers la gauche si on est à la première prévision
     }
+    changerDroite.disabled = false;
+
+});
+
+changerDroite.addEventListener("click", function() { // Quand on appuie pour voir les prévisions suivantes
+
+    if(jourChoisi != 6){
+        mettreEnDisplayNone(conteneurInfos.children.item(jourChoisi)); // On cache l'ancienne séléction
+        jourChoisi++;
+        mettreEnDisplayBlock(conteneurInfos.children.item(jourChoisi)); // On affiche la nouvelle
+    }
+    if(jourChoisi == 6){
+        changerDroite.disabled = true; // On désactive le bouton qui va vers la droite si on est à la dernière prévision
+    }
+    changerGauche.disabled = false;
+
 });
 
 
@@ -152,6 +164,15 @@ function mettreEnDisplayBlock(e) {
     e.style.display = 'block';
 }
 
+/**
+ * Permet de masquer un élément
+ * 
+ * @param {*} e 
+ */
+function mettreEnDisplayNone(e) {
+    e.style.display = 'none';
+}
+
 // Récupération de l'URL
 let urlcourante = document.location.href;
 urlcourante = urlcourante.split(/[?=&]/);
@@ -171,3 +192,5 @@ while (cpt < urlcourante.length) { // Indique les options choisis par l'utilisat
 let codeInsee = urlcourante[2];
 
 remplirElements(codeInsee);
+
+changerGauche.disabled = true;

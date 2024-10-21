@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./style.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
         <title>Document</title>
     </head>
 
@@ -20,20 +21,21 @@
             <div class="titre">
                 <h1>RABBIDE INSTANT WEATHER</h1>
             </div>
-            <div>
-                
-                <label >Afficher <strong id="nbJour">1</strong> jour de prévisions : </label>
-                <input type="range" name="nbJour" value="0" step="1" min="0" max="6" id="choixNbJour">
-            
-            </div>
 
             <div class="corps">
 
                 <h2>Voici les prévisions météo pour la ville de <span id="nomVille">???</span>.</h2>
 
+                <button id="changerGauche" class="material-symbols-outlined">
+                    arrow_back
+                </button>
+                <button id="changerDroite" class="material-symbols-outlined">
+                    arrow_forward
+                </button>
                 <div id="conteneurInfos">
 
-            </div>
+                </div>
+
                 <template id="carteMeteo">
                     <div  class = "weathercard">
                         <h4 id="datePrevision">Jour ???</h4>
