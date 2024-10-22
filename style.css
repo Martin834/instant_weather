@@ -8,16 +8,17 @@ body {
     width: 100%;
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
-
 }
 
 .fond {
-    height: 60vw;
+    height: 100%;
     width: 100%;
     background: url("./images/fond.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
+    float: left;
+    animation: reajuster0 0.5s;
 }
 
 .titre {
@@ -46,8 +47,9 @@ h3{
     font-size: 1.5vw;
 }
 
-ul{
-    font-size: 1.5vw
+.ul{
+    font-size: 1.5vw;
+    margin-left: 4vw;
 }
 
 .corps {
@@ -204,3 +206,56 @@ label {
   #changerDroite{
     margin-left: 53vw;
   }
+
+@media (max-width: 1174px) {
+    .fond {
+        height: 170%;
+        animation: reajuster1 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    .fond {
+        height: 220%;
+        animation: reajuster2 1s;
+    }
+}
+
+@media (max-width: 700px) {
+    .fond {
+        height: 300%;
+        animation: reajuster3 1s;
+    }
+}
+
+@media (max-width: 400px) {
+    .fond {
+        height: 500%;
+        animation: reajuster4 1s;
+    }
+}
+
+@keyframes reajuster0 {
+    from {height:170%;}
+    to {height:100%;}
+}
+
+@keyframes reajuster1 {
+    from {height:140%;}
+    to {height:170%;}
+}
+
+@keyframes reajuster2 {
+    from {height:190%;}
+    to {height:220%;}
+}
+
+@keyframes reajuster3 {
+    from {height:270%;}
+    to {height:300%;}
+}
+
+@keyframes reajuster4 {
+    from {height:300%;}
+    to {height:500%;}
+}

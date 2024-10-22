@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="instant weather rabbide affichage">
         <link href="./style.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
@@ -32,42 +33,42 @@
                 <template id="carteMeteo">
                     <div  class = "weathercard">
                         <h3 id="datePrevision">Jour ???</h3>
-                        <ul>
+                        <p class = "ul">
                             <span>Température maximale :</span>
                             <span id="Tmax">??? °C</span>
-                        </ul>
-                        <ul>
+                        </p>
+                        <p class = "ul">
                             <span>Température minimale :</span>
                             <span id="Tmin">??? °C</span>
-                        </ul>
-                        <ul>
+                        </p>
+                        <p class = "ul">
                             <span>Probabilité de pluie :</span>
                             <span id="probaPluie">???%</span>
-                        </ul>
-                        <ul>
+                        </p>
+                        <p class = "ul">
                             <span>Nombre d'heures d'ensoleillement :</span>
                             <span id="nbHSoleil">???h</span>
-                        </ul>
-                        <ul id="ulLatitude">
+                        </p>
+                        <p class = "ul" id="ulLatitude">
                             <span>Latitude :</span>
                             <span id="Latitude">???</span>
-                        </ul>
-                        <ul id="ulLongitude">
+                        </p>
+                        <p class = "ul" id="ulLongitude">
                             <span>Longitude :</span>
                             <span id="Longitude">???</span>
-                        </ul>
-                        <ul id="ulCumulPluie">
+                        </p>
+                        <p class = "ul" id="ulCumulPluie">
                             <span>Cumul pluie :</span>
                             <span id="CumulPluie">??? mm</span>
-                        </ul>
-                        <ul id="ulVentMoyen">
+                        </p>
+                        <p class = "ul" id="ulVentMoyen">
                             <span>Vent moyen (10m) :</span>
                             <span id="VentMoyen">??? km/h</span>
-                        </ul>
-                        <ul id="ulDirectionVent">
+                        </p>
+                        <p class = "ul" id="ulDirectionVent">
                             <span>Direction du vent :</span>
                             <span id="DirectionVent">???°</span>
-                        </ul>
+                        </p>
                         <img id="imgBilanMeteo" src="???" alt="image météo">
                     </div>
                 </template>

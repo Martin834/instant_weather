@@ -63,11 +63,11 @@ async function remplirElements(codeInsee){
 
         conteneurInfos.appendChild(clone[pos]);
         if (pos != 0) {
-            conteneurInfos.children.item(pos).style.display = "none";
+            mettreEnDisplayNone(conteneurInfos.children.item(pos));
         }
 
         conteneurInfos.children.item(pos).querySelector("#datePrevision").textContent = stringDate(data["forecast"]["datetime"]);
-        conteneurInfos.children.item(pos).querySelector("#Tmin").textContent = data["forecast"]["tmin"] + "°C";
+       conteneurInfos.children.item(pos).querySelector("#Tmin").textContent = data["forecast"]["tmin"] + "°C";
         conteneurInfos.children.item(pos).querySelector("#Tmax").textContent = data["forecast"]["tmax"] + "°C";
         conteneurInfos.children.item(pos).querySelector("#probaPluie").textContent = data["forecast"]["probarain"] + "%";
         conteneurInfos.children.item(pos).querySelector("#nbHSoleil").textContent = data["forecast"]["sun_hours"] + "H";
