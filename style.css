@@ -42,6 +42,14 @@ h3{
     text-decoration: underline;
 }
 
+h2{
+    margin-top: 0vw;
+}
+
+ul{
+    font-size: 1.5vw
+}
+
 .corps {
     background: rgba(0, 0, 0, 0.45);
     border-radius: 0.5vw;
@@ -86,7 +94,7 @@ h3{
 #imgBilanMeteo{
     height: 20vw;
     margin-left: 35vw;
-    margin-top: -13vw;
+    margin-top: -55%;
 }
 
 input[type=checkbox]{
@@ -97,7 +105,7 @@ input[type=checkbox]{
 }
 
 #nomVille{
-    color: #b50404;
+    color: #f51818;
     font-size: 2.5vw;
     text-shadow: 0.15vw 0.15vw 0vw #000000;
 }
@@ -137,7 +145,7 @@ label {
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-left: 30vw;
-    margin-top: -2vw;
+    margin-top: 2vw;
 }
 
 .valider:hover {
