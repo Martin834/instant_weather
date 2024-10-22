@@ -55,10 +55,10 @@ async function afficherCommunes(codePostal) {
   console.log(villes);
   if(villes.length == 0){ // Si on a trouvé des villes
 
-    listeVille.innerHTML += "<option value = \"\" >-- Aucune commune trouvée --</option>"
+    listeVille.innerHTML = "<option value = \"\" >-- Aucune commune trouvée --</option>"
     listeVille.style.appearance = "none";
   } else { // Si aucune ville n'a été trouvée
-    listeVille.innerHTML += "<option value = \"\" >-- Choisissez une commune --</option>"
+    listeVille.innerHTML = "<option value = \"\" >-- Choisissez une commune --</option>"
     for (i = 0; i < villes.length; i++) {
       listeVille.innerHTML += "<option value = " + villes[i]["code"] + ">" + villes[i]["nom"] + "</option>"
     }

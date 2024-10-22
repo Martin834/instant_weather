@@ -78,6 +78,7 @@ ul{
     font-size: 1.1vw;
     width: 20vw;
     height: 3vw;
+    animation: slide 1s;
 }
 
 #hey {
