@@ -1,6 +1,6 @@
 let nomVille = document.getElementById("nomVille"); // Partie du titre contenant le nom de la commune choisie
 
-const token = "402ff5a4f3425ce73e4f302174b81109e11b83bca8e2d5e82fde474b29e90704"; // Token pour accéder à l'API
+const token = "d75a7c814a28c440a240e712a3d0c49fedebc62389dd1ca7a42a0f9aa9fa4c52"; // Token pour accéder à l'API
 
 let jourChoisi = 0; // Entier indiquant le jour choisi
 let changerGauche = document.getElementById("changerGauche"); // Bouton pour voir les prévisions d'avant

@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 60vw;
     width: 100%;
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
@@ -12,7 +12,7 @@ body {
 }
 
 .fond {
-    height: 100vh;
+    height: 60vw;
     width: 100%;
     background: url("./images/fond.jpeg");
     background-repeat: no-repeat;
@@ -33,17 +33,17 @@ h1 {
     text-align: center;
     margin-top: 1.2%;
     margin-bottom: 0%;
-    width: 100%;
     display: inline-block;
     font-size: 3.8vw;
+}
+h2{
+    margin-top: 0vw;
+    font-size: 2vw;
 }
 
 h3{
     text-decoration: underline;
-}
-
-h2{
-    margin-top: 0vw;
+    font-size: 1.5vw;
 }
 
 ul{
@@ -78,7 +78,6 @@ ul{
     font-size: 1.1vw;
     width: 20vw;
     height: 3vw;
-
 }
 
 #hey {
@@ -93,8 +92,9 @@ ul{
 
 #imgBilanMeteo{
     height: 20vw;
-    margin-left: 35vw;
-    margin-top: -55%;
+    margin-left: 38vw;
+    margin-top: -30vw;
+    margin-bottom: -7vw;
 }
 
 input[type=checkbox]{
@@ -144,8 +144,9 @@ label {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-left: 30vw;
-    margin-top: 2vw;
+    margin-left: 10vw;
+   
+    margin-bottom: 5vw;
 }
 
 .valider:hover {
@@ -185,4 +186,20 @@ label {
     transform: scaleX(0.8)}
     100%  { opacity: 100%;
         transform: scaleX(1)  }
+  }
+
+
+#changerDroite ,#changerGauche{
+    background-color: #f51818;
+    border-radius: 20%;
+    margin-top: 0.5vw;
+    font-size: 3vw;
+  }
+
+ #changerGauche{
+    margin-left: 3vw;
+  }
+
+  #changerDroite{
+    margin-left: 53vw;
   }
